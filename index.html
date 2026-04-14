@@ -1,29 +1,27 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
+<html lang="en"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- SEO -->
 <title>Overlay Compare</title>
-<meta name="description" content="두 이미지를 오버레이로 비교할 수 있는 도구입니다. 슬라이더를 움직여 전후 차이를 한눈에 확인하세요.">
-<meta name="keywords" content="이미지 비교, 오버레이 비교, before after, 이미지 슬라이더">
+<meta name="description" content="A tool to compare two images using overlay. Move the slider to see before/after differences at a glance.">
+<meta name="keywords" content="image compare, overlay compare, before after, image slider">
 <meta name="author" content="">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://design-overlay-flax.vercel.app/">
 
-<!-- Open Graph (카카오, 페이스북 등 SNS 공유) -->
+<!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Overlay Compare">
-<meta property="og:description" content="두 이미지를 오버레이로 비교할 수 있는 도구입니다.">
+<meta property="og:description" content="A tool to compare two images using overlay.">
 <meta property="og:image" content="https://design-overlay-flax.vercel.app/og_image_1200x630.png">
 <meta property="og:url" content="https://design-overlay-flax.vercel.app/">
-<meta property="og:locale" content="ko_KR">
+<meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Overlay Compare">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Overlay Compare">
-<meta name="twitter:description" content="두 이미지를 오버레이로 비교할 수 있는 도구입니다.">
+<meta name="twitter:description" content="A tool to compare two images using overlay.">
 <meta name="twitter:image" content="https://design-overlay-flax.vercel.app/og_image_1200x630.png">
 
 <!-- Favicon -->
@@ -443,20 +441,20 @@
 
 <header>
   <span class="logo">// overlay-compare</span>
-  <span class="header-hint">디자인 ↔ 마크업 오버레이 비교 도구</span>
+  <span class="header-hint">Design ↔ Markup overlay comparison tool</span>
 </header>
 
 <div class="main">
   <div class="sidebar">
 
     <div class="sidebar-section">
-      <div class="section-label">이미지</div>
+      <div class="section-label">Images</div>
 
-      <div class="slot-label">베이스 (디자인 시안)</div>
+      <div class="slot-label">Base (Design mockup)</div>
       <div class="drop-zone" id="drop-base" onclick="document.getElementById('in-base').click()">
         <input type="file" id="in-base" accept="image/*">
-        <svg class="drop-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 15l5-5 4 4 3-3 6 6"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
-        <span class="drop-label">클릭 또는 드래그</span>
+        <svg class="drop-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M3 15l5-5 4 4 3-3 6 6"></path><circle cx="8.5" cy="8.5" r="1.5"></circle></svg>
+        <span class="drop-label">Click or drag &amp; drop</span>
         <div class="thumb-wrap" id="tw-base">
           <button class="clear-btn" onclick="clearSlot(event,'base')">×</button>
           <img id="thumb-base" src="" alt="">
@@ -464,11 +462,11 @@
         </div>
       </div>
 
-      <div class="slot-label">오버레이 (마크업 결과물)</div>
+      <div class="slot-label">Overlay (Markup result)</div>
       <div class="drop-zone" id="drop-over" onclick="document.getElementById('in-over').click()">
         <input type="file" id="in-over" accept="image/*">
-        <svg class="drop-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 15l5-5 4 4 3-3 6 6"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
-        <span class="drop-label">클릭 또는 드래그</span>
+        <svg class="drop-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M3 15l5-5 4 4 3-3 6 6"></path><circle cx="8.5" cy="8.5" r="1.5"></circle></svg>
+        <span class="drop-label">Click or drag &amp; drop</span>
         <div class="thumb-wrap" id="tw-over">
           <button class="clear-btn" onclick="clearSlot(event,'over')">×</button>
           <img id="thumb-over" src="" alt="">
@@ -476,15 +474,15 @@
         </div>
       </div>
 
-      <button class="btn-full" onclick="swapImages()">↕ 이미지 교체</button>
+      <button class="btn-full" onclick="swapImages()">↕ Swap images</button>
     </div>
 
     <div class="divider"></div>
 
     <div class="sidebar-section">
-      <div class="section-label">투명도</div>
+      <div class="section-label">Opacity</div>
       <div class="control-row">
-        <span class="control-name">오버레이</span>
+        <span class="control-name">Overlay</span>
         <input type="range" min="0" max="100" value="50" step="1" id="sl-opacity">
         <span class="val-badge" id="val-opacity">50%</span>
       </div>
@@ -498,7 +496,7 @@
     <div class="divider"></div>
 
     <div class="sidebar-section">
-      <div class="section-label">블렌드 모드</div>
+      <div class="section-label">Blend Mode</div>
       <div class="select-wrap">
         <select class="blend-select" id="blend-select" onchange="applyBlend()">
           <option value="normal">normal</option>
@@ -512,15 +510,15 @@
         </select>
         <span class="select-arrow">▾</span>
       </div>
-      <button class="btn-full" id="btn-diff" onclick="toggleDiff()">차이 강조 (difference)</button>
+      <button class="btn-full" id="btn-diff" onclick="toggleDiff()">Highlight diff (difference)</button>
     </div>
 
     <div class="divider"></div>
 
     <div class="sidebar-section">
-      <div class="section-label">줌</div>
+      <div class="section-label">Zoom</div>
       <div class="control-row">
-        <span class="control-name">배율</span>
+        <span class="control-name">Scale</span>
         <input type="range" min="25" max="300" value="100" step="5" id="sl-zoom">
         <span class="val-badge" id="val-zoom">100%</span>
       </div>
@@ -535,12 +533,12 @@
     <div class="divider"></div>
 
     <div class="sidebar-section">
-      <div class="section-label">단축키</div>
+      <div class="section-label">Shortcuts</div>
       <div class="shortcut-hint">
-        <kbd>←</kbd><kbd>→</kbd> 투명도 조절<br>
-        <kbd>D</kbd> 차이 강조<br>
-        <kbd>S</kbd> 이미지 교체<br>
-        <kbd>0</kbd> <kbd>5</kbd> <kbd>9</kbd> 빠른 투명도
+        <kbd>←</kbd><kbd>→</kbd> Adjust opacity<br>
+        <kbd>D</kbd> Highlight diff<br>
+        <kbd>S</kbd> Swap images<br>
+        <kbd>0</kbd> <kbd>5</kbd> <kbd>9</kbd> Quick opacity
       </div>
     </div>
 
@@ -549,16 +547,16 @@
   <div class="canvas-area grid-bg" id="canvas-area">
     <div class="empty-state" id="empty-state">
       <svg class="empty-icon" viewBox="0 0 48 48">
-        <rect x="6" y="6" width="20" height="20" rx="2"/>
-        <rect x="22" y="22" width="20" height="20" rx="2"/>
-        <path d="M14 14l20 20" stroke-dasharray="3 3"/>
+        <rect x="6" y="6" width="20" height="20" rx="2"></rect>
+        <rect x="22" y="22" width="20" height="20" rx="2"></rect>
+        <path d="M14 14l20 20" stroke-dasharray="3 3"></path>
       </svg>
-      <p>디자인 시안과 마크업 결과물<br>두 이미지를 올려주세요</p>
+      <p>Upload your design mockup<br>and markup result to compare</p>
     </div>
 
     <div id="img-container">
-      <img id="base-img" src="" alt="디자인 시안">
-      <img id="overlay-img" src="" alt="마크업 결과물">
+      <img id="base-img" src="" alt="Design mockup">
+      <img id="overlay-img" src="" alt="Markup result">
       <span class="img-badge badge-left" id="badge-base">BASE</span>
       <span class="img-badge badge-right" id="badge-over-label" style="display:none;">OVERLAY</span>
     </div>
@@ -719,5 +717,6 @@ document.addEventListener('keydown', e => {
   if (e.key === '9') applyOpacity(100);
 });
 </script>
-</body>
-</html>
+
+
+</body></html>
